@@ -1,4 +1,4 @@
-import { Usuario } from './registro-usuario'
+import { Usuario } from './clases/usuario'
 
 describe('Registro de usuarios', () => {
     test('deberia crear el usuario correctamente', () => {
