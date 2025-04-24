@@ -51,17 +51,17 @@
     "test_count": 0
   },
   {
-    "sha": "149b2120ec96ad108d515a038807ca9779488732",
+    "sha": "4121e86f4554a9d9a2e87f855b03ea808616f232",
     "author": "unknown",
     "commit": {
-      "date": "2025-04-24T14:18:08.000Z",
-      "message": "merge",
-      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/149b2120ec96ad108d515a038807ca9779488732"
+      "date": "2025-04-24T14:04:19.000Z",
+      "message": "docs: cambio de jerarquia de directorio para las clases y cambio de nombre del 'modulo' registro-usuarios a usuario",
+      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/4121e86f4554a9d9a2e87f855b03ea808616f232"
     },
     "stats": {
       "total": 19,
-      "additions": 2,
-      "deletions": 17,
+      "additions": 18,
+      "deletions": 1,
       "date": "2025-04-24"
     },
     "coverage": 0,
