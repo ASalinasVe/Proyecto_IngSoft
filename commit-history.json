@@ -1,0 +1,19 @@
+[
+  {
+    "sha": "dc949035ea691a4bd253a2951babf63bc581c1c1",
+    "author": "Aldrin",
+    "commit": {
+      "date": "2025-04-24T13:39:32.000Z",
+      "message": "correxion de errores",
+      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/dc949035ea691a4bd253a2951babf63bc581c1c1"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 13,
+      "deletions": 13,
+      "date": "2025-04-24"
+    },
+    "coverage": 0,
+    "test_count": 0
+  }
+]
