@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 0
+  },
+  {
+    "sha": "fd549b8611425cca4c7b1411f9f7f70106d700a3",
+    "author": "unknown",
+    "commit": {
+      "date": "2025-04-23T17:43:31.000Z",
+      "message": "feat: crear usuarios",
+      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/fd549b8611425cca4c7b1411f9f7f70106d700a3"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 15,
+      "deletions": 0,
+      "date": "2025-04-23"
+    },
+    "coverage": 0,
+    "test_count": 1
   }
 ]
