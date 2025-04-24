@@ -15,5 +15,22 @@
     },
     "coverage": 0,
     "test_count": 0
+  },
+  {
+    "sha": "dcdcd887393ee218a8da73c6bb7b2f1418b7c4bd",
+    "author": "ASalinasVe",
+    "commit": {
+      "date": "2025-04-24T14:06:38.000Z",
+      "message": "corrección de UN error",
+      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/dcdcd887393ee218a8da73c6bb7b2f1418b7c4bd"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 1,
+      "deletions": 16,
+      "date": "2025-04-24"
+    },
+    "coverage": 0,
+    "test_count": 0
   }
 ]
