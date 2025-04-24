@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="loginstyles.css"> <!-- Vinculando el archivo CSS -->
+  <link rel="stylesheet" href="indexstyles.css"> <!-- Vinculando el archivo CSS -->
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="GasQueue Logo" />
+          <span>GasQueue</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="reservas.html">Reservas</a>
+          <a href="tickets.html">Mis Tickets</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="login.html">Login</a>
+          <a href="registro.html" class="registro">Registrarse</a>
+        </nav>
+      </header>      
+  <section class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form action="/login" method="POST">
+      <div>
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+      <div>
+        <label for="password">Contraseña:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit">Ingresar</button>
+    </form>
+    <div class="register-link">
+      <p>¿No tienes una cuenta? <a href="/register">Crear cuenta</a></p>
+    </div>
+  </section>
+</body>
+</html>
