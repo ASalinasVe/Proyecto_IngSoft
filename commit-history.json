@@ -1,22 +1,5 @@
 [
   {
-    "sha": "dc949035ea691a4bd253a2951babf63bc581c1c1",
-    "author": "Aldrin",
-    "commit": {
-      "date": "2025-04-24T13:39:32.000Z",
-      "message": "correxion de errores",
-      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/dc949035ea691a4bd253a2951babf63bc581c1c1"
-    },
-    "stats": {
-      "total": 26,
-      "additions": 13,
-      "deletions": 13,
-      "date": "2025-04-24"
-    },
-    "coverage": 0,
-    "test_count": 0
-  },
-  {
     "sha": "fd549b8611425cca4c7b1411f9f7f70106d700a3",
     "author": "unknown",
     "commit": {
@@ -46,6 +29,40 @@
       "additions": 1,
       "deletions": 1,
       "date": "2025-04-23"
+    },
+    "coverage": 0,
+    "test_count": 1
+  },
+  {
+    "sha": "dc949035ea691a4bd253a2951babf63bc581c1c1",
+    "author": "Aldrin",
+    "commit": {
+      "date": "2025-04-24T13:39:32.000Z",
+      "message": "correxion de errores",
+      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/dc949035ea691a4bd253a2951babf63bc581c1c1"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 13,
+      "deletions": 13,
+      "date": "2025-04-24"
+    },
+    "coverage": 0,
+    "test_count": 0
+  },
+  {
+    "sha": "149b2120ec96ad108d515a038807ca9779488732",
+    "author": "unknown",
+    "commit": {
+      "date": "2025-04-24T14:18:08.000Z",
+      "message": "merge",
+      "url": "https://github.com/ASalinasVe/Proyecto_IngSoft/commit/149b2120ec96ad108d515a038807ca9779488732"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 2,
+      "deletions": 17,
+      "date": "2025-04-24"
     },
     "coverage": 0,
     "test_count": 1
