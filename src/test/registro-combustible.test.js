@@ -1,4 +1,4 @@
-import { procesarRegistro } from '../clases/registro_combustible'
+import { procesarRegistro } from '../clases/registro-combustible'
 
 describe('Registro de combustible', () => {
   test('debe registrar la cantidad de litros correctamente', () => {

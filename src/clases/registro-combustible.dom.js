@@ -1,4 +1,4 @@
-import { procesarRegistro } from './registro_combustible.js';
+import { procesarRegistro } from './registro-combustible.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registroCombustible");

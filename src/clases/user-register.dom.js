@@ -1,7 +1,6 @@
-import { Login } from './login.js';
 import { User } from './user.js';
 
-const login = new Login();
+const LISTA_USUARIOS = [];
 
 const form = document.getElementById('register-form');
 
@@ -14,7 +13,7 @@ form.addEventListener('submit', event => {
 
   const user = new User(name, v_id, password);
 
-  login.registerUser(user);
+  LISTA_USUARIOS.push(user);
 
-  console.log(login);
+  console.log(LISTA_USUARIOS);
 });
