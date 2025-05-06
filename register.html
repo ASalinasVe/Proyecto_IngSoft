@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GasQueue</title>
+    <link rel="stylesheet" href="Indexstyles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="GasQueue Logo" />
+            <span>GasQueue</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a>Reservas</a>
+            <a>Mis Tickets</a>
+            <a>Contacto</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Registrarse</a>
+        </nav>
+    </header>
+
+    <div>
+        <form id="register-form">
+            <div>
+                <label for="name-input">Nombre</label>
+                <input type="text" id="name-input">
+            </div>
+            <div>
+                <label for="v-id-input">Placa de vehiculo</label>
+                <input type="text" id="v-id-input">
+            </div>
+            <div>
+                <label for="password-input">Contraseña</label>
+                <input type="text" id="password-input">
+            </div>
+            <div>
+                <input type="submit" value="Registrar Usuario">
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="src/clases/user-register-handler.js"></script>
+</body>
+</html>
