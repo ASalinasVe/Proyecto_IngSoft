@@ -21,5 +21,14 @@ describe('Login', () => {
     login.registerUser({ username: 'ana', password: '1234' });
     expect(login.authenticate('ana', '1234')).toBe(true);
   });
+
+  test('fallo al iniciar sesión con contraseña incorrecta', () => {
+    login.registerUser({ username: 'ana', password: '1234' });
+    expect(login.authenticate('ana', 'wrong')).toBe(false);
+  });
+
+  test('fallo al iniciar sesión con usuario inexistente', () => {
+    expect(login.authenticate('otro', '1234')).toBe(false);
+  });
   
 });
