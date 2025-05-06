@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesión</title>
-  <link rel="stylesheet" href="loginstyles.css"> <!-- Vinculando el archivo CSS -->
-  <link rel="stylesheet" href="Indexstyles.css"> <!-- Vinculando el archivo CSS -->
-
+  <link rel="stylesheet" href="loginstyles.css">
+  <link rel="stylesheet" href="Indexstyles.css"> 
 </head>
 <body>
     <header class="navbar">
@@ -23,32 +22,35 @@
           <a class="registro">Registrarse</a>
         </nav>
       </header>
+  
   <section class="login-container">
     <h2>Iniciar Sesión</h2>
-    <form action="/login" method="POST">
-      <div>
-        <label for="email">Correo electrónico:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
-      </div>
-      <div>
-        <label for="password">Contraseña:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-        />
-      </div>
-      <button type="submit">Ingresar</button>
-    </form>
+    <form id="login-form">
+        <div>
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Ingresar</button> 
+      </form>
+
     <div class="register-link">
       <p>¿No tienes una cuenta? <a href="/register">Crear cuenta</a></p>
     </div>
   </section>
+
+  <script type="module">
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      window.location.href = 'index.html';
+    });
+  </script>
+  
 </body>
 </html>
