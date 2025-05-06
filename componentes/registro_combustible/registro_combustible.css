@@ -1,0 +1,126 @@
+/* Estilo base */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://blueskynewenergy.com/wp-content/uploads/2022/10/14325.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  /* Navbar - heredado del index */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #241238;
+    color: #a240e8;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar .logo img {
+    height: 40px;
+  }
+  
+  .navbar .logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    color: #a240e8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00c8ff;
+  }
+  
+  .nav-links .registro {
+    background-color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: #000;
+  }
+  
+  .nav-links .registro:hover {
+    background-color: #d0eaef;
+    color: #a240e8;
+  }
+  
+  /* Título */
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2rem;
+    color: #ffffff;
+  }
+  
+  /* Formulario */
+  form#registroCombustible {
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  form input,
+  form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #a240e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #bd7eea;
+  }
+  
+  /* Mensaje post-registro */
+  #mensaje {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

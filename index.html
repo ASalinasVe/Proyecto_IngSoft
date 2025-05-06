@@ -4,23 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GasQueue</title>
-  <link rel="stylesheet" href="Indexstyles.css">
+  <!--<link rel="stylesheet" href="Indexstyles.css">-->
 </head>
 <body>
 
 <!-- Navbar -->
 <header class="navbar">
   <div class="logo">
-    <img src="logo.jpg" alt="GasQueue Logo" />
+    <!--<img src="logo.jpg" alt="GasQueue Logo" />-->
     <span>GasQueue</span>
   </div>
   <nav class="nav-links">
     <a href="index.html">Inicio</a>
-    <a>Reservas</a>
-    <a>Mis Tickets</a>
-    <a>Contacto</a>
-    <a href="login.html">Login</a>
-    <a class="registro">Registrarse</a>
+    <a href="componentes/login/login.html">Login</a>
+    <a href="componentes/registro_combustible/registro_combustible.html" class="registro-btn">Registrar Combustible</a>
   </nav>
 </header>
 
@@ -30,13 +27,21 @@
     <div class="hero-content">
       <h1>Bienvenidos a GasQueue</h1>
       <p>Facilitando el acceso a los surtidores de la ciudad</p>
-      <!--<div class="boton-calendario">
-        <a href="surtidores.html"><button class="btn btn-success">Surtidores</button></a>
-      </div>-->
     </div>
   </div>
 </section>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mensaje = localStorage.getItem("mensajeRegistro");
+    if (mensaje) {
+      const div = document.createElement("div");
+      div.textContent = mensaje;
+      document.body.prepend(div);
+      localStorage.removeItem("mensajeRegistro");
+    }
+  });
+</script>
 
 </body>
 </html>
