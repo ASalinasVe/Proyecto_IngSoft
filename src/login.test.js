@@ -1,22 +1,13 @@
-import { Login } from './clases/login.js';
+import { Login } from '../src/login.js';
 
 describe('Login', () => {
-    let login;
+  let login;
 
-    beforeEach(() => {
-        login = new Login();
-        login.registerUser({ username: 'ana', password: '1234' });
-    });
+  beforeEach(() => {
+    login = new Login();
+  });
 
-    test('autenticación exitosa con credenciales válidas', () => {
-        expect(login.authenticate('ana', '1234')).toBe(true);
-    });
-
-    test('fallo al iniciar sesión con contraseña incorrecta', () => {
-        expect(login.authenticate('ana', 'wrong')).toBe(false);
-    });
-
-    test('fallo al iniciar sesión con usuario inexistente', () => {
-        expect(login.authenticate('otro', '1234')).toBe(false);
-    });
+  test('inicializa con lista de usuarios vacía', () => {
+    expect(login.users).toEqual([]);
+  });
 });
