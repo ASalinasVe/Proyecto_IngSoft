@@ -15,4 +15,9 @@ function obtenerSurtidores() {
     return surtidores;
 }
 
-export { Surtidor, obtenerSurtidores};
+function obtenerSurtidoresDisponibles() {
+    const surtidores = JSON.parse(localStorage.getItem("surtidores")) || [];
+    return surtidores.filter(surtidores.disponible === true);
+}
+
+export { Surtidor, obtenerSurtidores, obtenerSurtidoresDisponibles};

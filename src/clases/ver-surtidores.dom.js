@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     surtidores.forEach(s => {
       const li = document.createElement("li");
-      li.textContent = `ID: ${s.id} - ${s.nombre}, Ubicación: ${s.ubicacion}, Precio: ${s.precio}, Cantidad: ${s.cantidad}`;
+      li.textContent = `ID: ${s.id} - ${s.nombre}, Ubicación: ${s.ubicacion}, Tipo: ${s.tipo}, Precio: ${s.precio}, Cantidad: ${s.cantidad}`;
       lista.appendChild(li);
     });
   }
