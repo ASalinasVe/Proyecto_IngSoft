@@ -1,4 +1,4 @@
-import { obtenerSurtidores, obtenerSurtidoresDisponibles } from '../clases/surtidor.js';
+import { obtenerSurtidores, obtenerSurtidoresDisponibles, obtenerSurtidoresDisponiblesGasolina } from '../clases/surtidor.js';
 import { LocalStorage } from 'node-localstorage';
 
 global.localStorage = new LocalStorage('./scratch');
@@ -32,6 +32,15 @@ describe("Ver lista de surtidores", () => {
     expect(disponibles.length).toBe(1);
     expect(disponibles).toEqual([
       { id: 2, nombre: "Surtidor B", ubicacion: "Zona 2", tipo: "gasolina", disponible: false, precio: 5, cantidad: 0 }
+    ]);
+    
+  });
+
+  test("debe mostrar solo los surtidores disponibles con gasolina", () => {
+    const disponibles = obtenerSurtidoresDisponiblesGasolina()
+    expect(disponibles.length).toBe(1);
+    expect(disponibles).toEqual([
+      { id: 1, nombre: "Surtidor A", ubicacion: "Zona 1", tipo: "gasolina", disponible: true, precio: 5, cantidad: 100 }
     ]);
     
   });
