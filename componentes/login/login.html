@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <header class="navbar">
+  <header class="navbar">
         <!--<div class="logo">
           <img src="../../logo.jpg" alt="GasQueue Logo" />
         </div>-->
@@ -18,25 +18,23 @@
           <a href="../../index.html">Inicio</a>
           <a href="login.html">Login</a>
         </nav>
-      </header>
+  </header>
   <section class="login-container">
     <h2>Iniciar Sesión</h2>
-    <form action="/login" method="POST">
+    <form id="login-form">
       <div>
-        <label for="email">Correo electrónico:</label>
+        <label for="placa-input">Placa de Vehiculo</label>
         <input
-          type="email"
-          id="email"
-          name="email"
+          type="text"
+          id="placa-input"
           required
         />
       </div>
       <div>
-        <label for="password">Contraseña:</label>
+        <label for="password-input">Contraseña:</label>
         <input
           type="password"
-          id="password"
-          name="password"
+          id="password-input"
           required
         />
       </div>
@@ -45,6 +43,9 @@
     <div class="register-link">
       <p>¿No tienes una cuenta? <a href="../registro-usuario/register.html">Crear cuenta</a></p>
     </div>
+    <div id="caja-error"></div>
   </section>
+
+  <script src="../../src/clases/login.dom.js"></script>
 </body>
 </html>
