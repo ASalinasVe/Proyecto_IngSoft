@@ -1,0 +1,19 @@
+import { obtenerSurtidores } from '../clases/surtidor.js';
+import { LocalStorage } from 'node-localstorage';
+
+global.localStorage = new LocalStorage('./scratch');
+
+describe("Ver Surtidores Disponibles", () => {
+  beforeEach(() => {
+    localStorage.setItem("surtidores", JSON.stringify([
+      { id: 1, nombre: "Surtidor A", ubicacion: "Zona 1", disponible: true, precio: 5, cantidad: 100 },
+      { id: 2, nombre: "Surtidor B", ubicacion: "Zona 2", disponible: false, precio: 5, cantidad: 200 },
+      { id: 3, nombre: "Surtidor C", ubicacion: "Zona 3", disponible: true, precio: 6, cantidad: 150 }
+    ]));
+  });
+
+  test("debe devolver solo surtidores en la lista", () => {
+    const disponibles = obtenerSurtidores();
+    expect(disponibles.length).toBe(3);
+  });
+});
