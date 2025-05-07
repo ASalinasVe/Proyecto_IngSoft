@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "postinstall": "git init && npx husky",
     "semantic-commits-on": "node semantic-commits.js enable",
-    "semantic-commits-off": "node semantic- commits.js disabled"
+    "semantic-commits-off": "node semantic-commits.js disabled"
   },
   "author": "Israel Antezana R.",
   "license": "ISC",
