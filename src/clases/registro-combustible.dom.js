@@ -17,11 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const procesado = procesarRegistro(datos);
 
+      const surtidores = JSON.parse(localStorage.getItem("surtidores")) || [];
+
+      // Busca el surtidor por nombre o id
+      const surtidor = surtidores.find(s => s.nombre === procesado.estacion && s.tipo === procesado.tipo);
+      
+      if (surtidor) {
+        surtidor.cantidad += procesado.litros; // Suma los litros
+        localStorage.setItem("surtidores", JSON.stringify(surtidores));
+      }      
+
       const mensaje = `Llegada de ${procesado.litros} litros de ${procesado.tipo} en la estación ${procesado.estacion} a hrs ${formatearHora(procesado.hora)}`;
       localStorage.setItem("mensajeRegistro", mensaje);
       window.location.href = "../../index.html";
     });
   }
+
+
 });
 
 function formatearHora(hora24) {
