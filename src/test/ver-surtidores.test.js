@@ -37,12 +37,21 @@ describe("Ver lista de surtidores", () => {
   });
 
   test("debe mostrar solo los surtidores disponibles con gasolina", () => {
-    const disponibles = obtenerSurtidoresDisponiblesGasolina()
+    const disponibles = obtenerSurtidoresDisponiblesGasolina();
     expect(disponibles.length).toBe(1);
     expect(disponibles).toEqual([
       { id: 1, nombre: "Surtidor A", ubicacion: "Zona 1", tipo: "gasolina", disponible: true, precio: 5, cantidad: 100 }
     ]);
-    
+
   });
+
+  test("debe mostrar solo los surtidores disponibles con diesel", () => {
+    const disponibles = obtenerSurtidoresDisponibles().filter(s => s.tipo === "diesel");
+    expect(disponibles.length).toBe(1);
+    expect(disponibles).toEqual([
+      { id: 3, nombre: "Surtidor C", ubicacion: "Zona 3", tipo: "diesel", disponible: true, precio: 6, cantidad: 150 }
+    ]); 
+    
+  });    
 
 });
