@@ -1,0 +1,1 @@
+[{"id":1,"nombre":"Surtidor A","ubicacion":"Zona 1","tipo":"gasolina","disponible":true,"precio":5,"cantidad":100},{"id":2,"nombre":"Surtidor B","ubicacion":"Zona 2","tipo":"gasolina","disponible":false,"precio":5,"cantidad":0},{"id":3,"nombre":"Surtidor C","ubicacion":"Zona 3","tipo":"diesel","disponible":true,"precio":6,"cantidad":150}]
