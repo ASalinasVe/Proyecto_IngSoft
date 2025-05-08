@@ -15,5 +15,7 @@ form.addEventListener('submit', event => {
 
   LISTA_USUARIOS.push(user);
 
+  localStorage.setItem("usuarios", JSON.stringify(LISTA_USUARIOS));
+
   console.log(LISTA_USUARIOS);
 });
