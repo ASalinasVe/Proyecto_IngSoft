@@ -13,7 +13,7 @@ form.addEventListener('submit', event => {
     console.log(resp);
 
     if (resp) {
-        window.location.href = "/index.html";
+        window.location.href = "../../index.html";
     }
     else {
         document.getElementById('caja-error').textContent = "Placa o Usuario incorrectos o no existentes";

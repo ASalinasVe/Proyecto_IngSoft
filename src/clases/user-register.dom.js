@@ -18,4 +18,12 @@ form.addEventListener('submit', event => {
   localStorage.setItem("usuarios", JSON.stringify(LISTA_USUARIOS));
 
   console.log(LISTA_USUARIOS);
+
+  if (user) {
+    window.location.href = "../../componentes/login/login.html";
+  }
+  else {
+    document.getElementById('caja-error').textContent = "Placa o Usuario incorrectos o no existentes";
+  }
+
 });
