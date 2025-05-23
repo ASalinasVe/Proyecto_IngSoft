@@ -29,4 +29,9 @@ describe('Reserva de tickets - Básico', () => {
   test('crearTicket debe lanzar error si la placa está vacía', () => {
   expect(() => crearTicket({ placa: "", gasolinera: "Sur Fuel" })).toThrow("Datos incompletos");
   });
+
+  test('crearTicket debe lanzar error si la gasolinera está vacía', () => {
+  expect(() => crearTicket({ placa: "XYZ999", gasolinera: "" })).toThrow("Datos incompletos");
+  });
+
 });
