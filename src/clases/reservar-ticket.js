@@ -25,6 +25,7 @@ function crearTicket(entrada) {
   const hora = calcularHora(HORA_INICIO, numero);
 
   const nuevoTicket = {
+    id: Date.now(), 
     placa: entrada.placa,
     gasolinera: entrada.gasolinera,
     numero,
