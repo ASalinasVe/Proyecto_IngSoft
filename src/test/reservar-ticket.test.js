@@ -1,13 +1,8 @@
 import { crearTicket } from '../clases/reservar-ticket.js';
 
-describe('Reserva de tickets', () => {
-  beforeEach(() => {
-    localStorage.clear();
+describe('Reserva de tickets - Básico', () => {
+  test('crearTicket debería devolver un objeto con la placa', () => {
+    const ticket = crearTicket({ placa: "ABC123", gasolinera: "Estación Norte" });
+    expect(ticket.placa).toBe("ABC123");
   });
-
-  test('debe registrar correctamente la placa del vehículo', () => {
-    const ticket = crearTicket("456XYZ", "Estación Norte");
-    expect(ticket.placa).toBe("456XYZ");
-  });
-
 });
