@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar Ticket</title>
+</head>
+<body>
+  <h2>Reserva tu ticket</h2>
+
+  <form id="formTicket">
+    <label for="placa">Número de placa:</label>
+    <input type="text" id="placa" required>
+
+    <label for="gasolinera">Selecciona la gasolinera:</label>
+    <select id="gasolinera" required>
+      <option value="">--Seleccionar--</option>
+      <option value="Gasolinera Central">Gasolinera Central</option>
+      <option value="Estación Norte">Estación el Cristo</option>
+      <option value="Sur Fuel">Pulpoter</option>
+    </select>
+
+    <button type="submit">Reservar Ticket</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <!--<a href="mis-tickets.html">Ver mis tickets</a>-->
+
+  <script type="module" src="../../src/clases/reservar-ticket.js"></script>
+</body>
+</html>
