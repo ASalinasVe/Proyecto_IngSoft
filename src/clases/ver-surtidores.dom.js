@@ -28,6 +28,25 @@ function actualizarSurtidores(){
   }
 }
 
+function actualizarSurtidoresDisponibles(){
+  const listadisponibles = document.getElementById("lista-surtidores");
+  if (listadisponibles) {
+    listadisponibles.innerHTML = "";
+    const surtidoresdisponibles = obtenerSurtidoresDisponibles();
+    surtidoresdisponibles.forEach(s => {
+      const li = document.createElement("li");
+      const estado = s.disponible ? "Disponible" : "No Disponible";
+      li.textContent = `Surtidor: ${s.nombre}, Ubicación: ${s.ubicacion}, Tipo: ${s.tipo}, Precio: ${s.precio}, Cantidad: ${s.cantidad}, Disponible: ${estado}`;
+      listadisponibles.appendChild(li);
+    });
+    if (surtidoresdisponibles.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "No hay surtidores disponibles";
+      listadisponibles.appendChild(li);
+    }
+  }
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
   actualizarSurtidores();
@@ -37,6 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
     btnActualizar.addEventListener("click", () => {
       actualizarSurtidores();
     });
+  }
+
+  const btnSurtidoresDisponibles = document.getElementById("obtener-surtidores-disponibles");
+  if (btnSurtidoresDisponibles){
+    btnSurtidoresDisponibles.addEventListener("click", () => {
+      actualizarSurtidoresDisponibles();
+    })
   }
 
 });
