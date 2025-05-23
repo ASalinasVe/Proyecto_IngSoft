@@ -16,6 +16,10 @@ function calcularHora(base, turno) {
 }
 
 function crearTicket(entrada) {
+  if (!entrada.placa || !entrada.placa.trim() || !entrada.gasolinera || !entrada.gasolinera.trim()) {
+    throw new Error("Datos incompletos");
+  }
+
   const tickets = obtenerTickets();
   const numero = tickets.length + 1;
   const hora = calcularHora(HORA_INICIO, numero);
