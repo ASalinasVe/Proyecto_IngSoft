@@ -45,5 +45,13 @@ describe('Reserva de tickets - Básico', () => {
   expect(tickets[1].placa).toBe("DEF456");
   });
 
+  test('crearTicket debe devolver un objeto con todos los campos requeridos', () => {
+  const ticket = crearTicket({ placa: "LMN789", gasolinera: "Estación Norte" });
 
+  expect(ticket).toHaveProperty("id");
+  expect(ticket).toHaveProperty("placa", "LMN789");
+  expect(ticket).toHaveProperty("gasolinera", "Estación Norte");
+  expect(ticket).toHaveProperty("numero", 1);
+  expect(ticket).toHaveProperty("hora", "09:00");
+  });
 });
