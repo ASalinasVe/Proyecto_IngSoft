@@ -25,4 +25,8 @@ describe('Reserva de tickets - Básico', () => {
   const segundo = crearTicket({ placa: "BBB222", gasolinera: "Gasolinera Central" }); // ticket 2 → 09:05
   expect(segundo.hora).toBe("09:05");
   });
+
+  test('crearTicket debe lanzar error si la placa está vacía', () => {
+  expect(() => crearTicket({ placa: "", gasolinera: "Sur Fuel" })).toThrow("Datos incompletos");
+  });
 });
