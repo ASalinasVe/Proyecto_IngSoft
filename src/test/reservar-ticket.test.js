@@ -1,4 +1,4 @@
-import { crearTicket } from '../clases/reservar-ticket.js';
+import { crearTicket, obtenerTickets } from '../clases/reservar-ticket.js';
 
 describe('Reserva de tickets - Básico', () => {
   beforeEach(() => {
@@ -33,5 +33,17 @@ describe('Reserva de tickets - Básico', () => {
   test('crearTicket debe lanzar error si la gasolinera está vacía', () => {
   expect(() => crearTicket({ placa: "XYZ999", gasolinera: "" })).toThrow("Datos incompletos");
   });
+
+  test('obtenerTickets debe devolver todos los tickets registrados', () => {
+  crearTicket({ placa: "ABC123", gasolinera: "Gasolinera Central" });
+  crearTicket({ placa: "DEF456", gasolinera: "Pulpoter" });
+
+  const tickets = obtenerTickets();
+
+  expect(tickets.length).toBe(2);
+  expect(tickets[0].placa).toBe("ABC123");
+  expect(tickets[1].placa).toBe("DEF456");
+  });
+
 
 });
