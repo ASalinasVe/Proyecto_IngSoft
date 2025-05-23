@@ -1,6 +1,7 @@
 function crearTicket(entrada) {
   return {
-    placa: entrada.placa
+    placa: entrada.placa,
+    gasolinera: entrada.gasolinera
   };
 }
 
