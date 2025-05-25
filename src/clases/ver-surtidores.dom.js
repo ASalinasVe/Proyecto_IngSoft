@@ -8,7 +8,7 @@ const surtidoresIniciales = [
   { id: 4, nombre: "Surtidor D", ubicacion: "Zona 4", tipo: "diesel", disponible: false, precio: 6, cantidad: 0 } 
 ];
 
-localStorage.removeItem("surtidores"); // Esto borra la lista vieja cada vez que recargas
+//localStorage.removeItem("surtidores"); // Esto borra la lista vieja cada vez que recargas
 
 if (!localStorage.getItem("surtidores")) {
   localStorage.setItem("surtidores", JSON.stringify(surtidoresIniciales));

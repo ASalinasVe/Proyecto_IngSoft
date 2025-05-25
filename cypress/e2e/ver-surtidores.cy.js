@@ -1,6 +1,9 @@
 describe("Pruebas para ver-surtidores.dom.js", () => {
   
   beforeEach(() => {
+    //limpiar localstorage
+    cy.clearLocalStorage();
+
     cy.visit("src/clases/ver-surtidores.dom.html", {
     onBeforeLoad(win) {
         win.obtenerSurtidores = () => [
@@ -47,7 +50,6 @@ describe("Pruebas para ver-surtidores.dom.js", () => {
     cy.get("#lista-surtidores li").should("have.length", 2);
     cy.get("#lista-surtidores li").eq(0).should("contain", "Surtidor: Surtidor A");
     cy.get("#lista-surtidores li").eq(1).should("contain", "Surtidor: Surtidor B");
-
   });
 
 });
