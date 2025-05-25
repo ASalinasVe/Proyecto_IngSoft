@@ -34,5 +34,9 @@
   },
   "dependencies": {
     "parcel-jest-base": "file:"
+  },
+  
+  "jest": {
+    "setupFiles": ["jest-localstorage-mock"]
   }
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar Ticket</title>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">
+    <!--<img src="logo.jpg" alt="GasQueue Logo" />-->
+    <span>GasQueue</span>
+  </div>
+  <nav class="nav-links">
+    <a href="../../index.html">Inicio</a>
+    <a href="../registro_combustible/registro_combustible.html" class="registro-btn">Registrar Combustible</a>
+    <a>Reservas</a> <!--Para que la gasolinera vea las reservas-->
+    <a href="../reserva-ticket/reservar-ticket.html">Reservar ticket</a>
+    <a href="../mis-tickets/mis-tickets.html">Tickets</a>
+    <a href="../login/login.html">Login</a>
+    <a href="../registro-usuario/register.html">Registrarse</a>
+  </nav>
+</header>
+  <h2>Reserva tu ticket</h2>
+
+  <form id="formTicket">
+    <label for="placa">Número de placa:</label>
+    <input type="text" id="placa" required>
+
+    <label for="gasolinera">Selecciona la gasolinera:</label>
+    <select id="gasolinera" required>
+      <option value="">--Seleccionar--</option>
+      <option value="Gasolinera Central">Gasolinera Central</option>
+      <option value="Estación Norte">Estación Norte</option>
+      <option value="Sur Fuel">Pulpoter</option>
+    </select>
+
+    <button type="submit">Reservar Ticket</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <!--<a href="mis-tickets.html">Ver mis tickets</a>-->
+
+  <script type="module" src="../../src/clases/reservar-ticket.js"></script>
+</body>
+</html>
