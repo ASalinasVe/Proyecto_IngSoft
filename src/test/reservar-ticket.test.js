@@ -91,4 +91,21 @@ describe('Cancelación de tickets - Básico', () => {
   expect(tickets[0].id).toBe(t1.id);
   expect(tickets[1].id).toBe(t2.id);
   });
+
+  test('cancelarTicket no afecta si se intenta cancelar dos veces el mismo ticket', (done) => {
+  const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
+
+  setTimeout(() => {
+    const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+
+    cancelarTicket(t1.id);
+    cancelarTicket(t1.id); // segunda vez
+
+    const tickets = obtenerTickets();
+    expect(tickets.length).toBe(1);
+    expect(tickets[0].id).toBe(t2.id);
+
+    done();
+  }, 10);
+  });
 });
