@@ -1,4 +1,4 @@
-import { crearTicket, obtenerTickets } from '../clases/reservar-ticket.js';
+import { crearTicket, obtenerTickets, cancelarTicket } from '../clases/reservar-ticket.js';
 
 describe('Reserva de tickets - Básico', () => {
   beforeEach(() => {
@@ -64,14 +64,20 @@ describe('Cancelación de tickets - Básico', () => {
     localStorage.clear();
   });
 
-  test('cancelarTicket elimina el ticket con el ID indicado', () => {
-    const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
-    const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+  test('cancelarTicket elimina el ticket con el ID indicado', (done) => {
+  const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
 
-    cancelarTicket(t1.id);
+    setTimeout(() => {
+     const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
 
-    const tickets = obtenerTickets();
-    expect(tickets.length).toBe(1);
-    expect(tickets[0].id).toBe(t2.id);
-  });
+     cancelarTicket(t1.id);
+
+     const tickets = obtenerTickets();
+     expect(tickets.length).toBe(1);
+     expect(tickets[0].id).toBe(t2.id);
+
+     done();
+     }, 10);
+   });
+
 });
