@@ -104,5 +104,17 @@ describe("Ver lista de surtidores", () => {
     expect(items[1].textContent).toContain("Reservas hoy: 1");
   });
 
+  test("actualizarSurtidoresDisponibles muestra mensaje si no hay disponibles", () => {
+    // Todos no disponibles
+    localStorage.setItem("surtidores", JSON.stringify([
+      { id: 1, nombre: "Surtidor X", ubicacion: "Zona X", tipo: "gasolina", disponible: false, precio: 5, cantidad: 0 }
+    ]));
+
+    actualizarSurtidoresDisponibles();
+
+    const items = document.querySelectorAll('#lista-surtidores li');
+    expect(items.length).toBe(1);
+    expect(items[0].textContent).toBe("No hay surtidores disponibles");
+  });
 
 });
