@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GasQueue</title>
-  <!--<link rel="stylesheet" href="Indexstyles.css">-->
+  <link rel="stylesheet" href="Indexstyles.css">
 </head>
 <body>
 
 <!-- Navbar -->
 <header class="navbar">
   <div class="logo">
-    <!--<img src="logo.jpg" alt="GasQueue Logo" />-->
-    <span>GasQueue</span>
+    <img src="../11295059.png" alt="GasQueue Logo" class="logo-img" />
+    <span class="logo-text">GasQueue</span>
   </div>
   <nav class="nav-links">
     <a href="index.html">Inicio</a>
     <a href="componentes/registro_combustible/registro_combustible.html" class="registro-btn">Registrar Combustible</a>
-    <a>Reservas</a> <!--Para que la gasolinera vea las reservas-->
     <a href="componentes/reserva-ticket/reservar-ticket.html">Reservar ticket</a>
     <a href="componentes/mis-tickets/mis-tickets.html">Tickets</a>
     <a href="./componentes/login/login.html">Login</a>
@@ -49,8 +48,10 @@
 
 <div>
   <h2>Lista de Surtidores</h2>
-  <button id="actualizar-surtidores">Actualizar</button>  
-  <button id="obtener-surtidores-disponibles">Surtidores Disponibles</button>
+  <div class="botones-container">
+    <button id="actualizar-surtidores">Actualizar</button>  
+    <button id="obtener-surtidores-disponibles">Surtidores Disponibles</button>
+  </div>
   <ul id="lista-surtidores"></ul>
 
   <script type="module">

@@ -1,0 +1,82 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #4a148c;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #caa5e8;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  color: #6a1b9a;
+}
+
+/* Lista de tickets */
+#listaTickets {
+  list-style: none;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+#listaTickets li {
+  background-color: #f3e5f5;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(106, 27, 154, 0.15);
+  font-size: 1rem;
+}
+
+/* Enlace "Volver a reservar" */
+a[href*="reservar-ticket.html"] {
+  display: block;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 0.8rem 1.5rem;
+  background-color: #b39ddb;
+  color: white;
+  text-decoration: none;
+  width: fit-content;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+a[href*="reservar-ticket.html"]:hover {
+  background-color: #9575cd;
+}

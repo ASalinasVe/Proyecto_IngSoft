@@ -1,0 +1,130 @@
+/* Colores pastel y fuente clara */
+:root {
+  --primary: #c6a0f6;       /* morado pastel principal */
+  --secondary: #e0d4f7;     /* fondo de botones / hover */
+  --text-dark: #4b3869;     /* texto oscuro suave */
+  --background: #ffffff;    /* fondo blanco */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  height: 40px; /* pequeño-mediano */
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #4a148c;
+}
+
+
+.nav-links a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s, padding 0.3s;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  background-color: var(--secondary);
+  color: var(--text-dark);
+}
+
+/* Hero banner */
+.hero {
+  background: linear-gradient(to right, #e6ddf8, #f3efff);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Sección de surtidores */
+div h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#actualizar-surtidores,
+#obtener-surtidores-disponibles {
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#actualizar-surtidores:hover,
+#obtener-surtidores-disponibles:hover {
+  background-color: var(--secondary);
+  color: var(--text-dark);
+}
+
+.botones-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+#lista-surtidores {
+  max-width: 600px;
+  margin: 1rem auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+#lista-surtidores li {
+  background-color: #f8f4ff;
+  border-left: 5px solid var(--primary);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
