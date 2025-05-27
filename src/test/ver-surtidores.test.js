@@ -89,5 +89,20 @@ describe("Ver lista de surtidores", () => {
     expect(items[2].textContent).toContain("Reservas hoy: 1");
   });
 
+  test("actualizarSurtidoresDisponibles muestra solo los disponibles con reservas", () => {
+    actualizarSurtidoresDisponibles();
+
+    const items = document.querySelectorAll('#lista-surtidores li');
+    expect(items.length).toBe(2);
+
+    expect(items[0].textContent).toContain("Surtidor A");
+    expect(items[0].textContent).toContain("Disponible");
+    expect(items[0].textContent).toContain("Reservas hoy: 2");
+
+    expect(items[1].textContent).toContain("Surtidor C");
+    expect(items[1].textContent).toContain("Disponible");
+    expect(items[1].textContent).toContain("Reservas hoy: 1");
+  });
+
 
 });
