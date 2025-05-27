@@ -1,4 +1,5 @@
 import { obtenerSurtidores, obtenerSurtidoresDisponibles } from './surtidor.js';
+import {obtenerTickets} from './reservar-ticket.js';
 
 
 const surtidoresIniciales = [
@@ -8,37 +9,85 @@ const surtidoresIniciales = [
   { id: 4, nombre: "Surtidor D", ubicacion: "Zona 4", tipo: "diesel", disponible: false, precio: 6, cantidad: 0 } 
 ];
 
-//localStorage.removeItem("surtidores"); // Esto borra la lista vieja cada vez que recargas
-
 if (!localStorage.getItem("surtidores")) {
   localStorage.setItem("surtidores", JSON.stringify(surtidoresIniciales));
 }
 
-function actualizarSurtidores(){
+export function actualizarSurtidores() {
   const lista = document.getElementById("lista-surtidores");
-  if (lista){
+  if (lista) {
     lista.innerHTML = "";
     const surtidores = obtenerSurtidores();
+    const tickets = obtenerTickets();
+    const hoy = new Date().toISOString().split("T")[0];
+
     surtidores.forEach(s => {
+      // Contar tickets de hoy para este surtidor (por nombre)
+      const reservasHoy = tickets.filter(
+        t => t.gasolinera.trim().toLowerCase() === s.nombre.trim().toLowerCase() &&
+             new Date(t.id).toISOString().split("T")[0] === hoy
+      ).length;
+
       const li = document.createElement("li");
       const estado = s.disponible ? "Disponible" : "No Disponible";
-      li.textContent = `Surtidor: ${s.nombre}, Ubicación: ${s.ubicacion}, Tipo: ${s.tipo}, Precio: ${s.precio}, Cantidad: ${s.cantidad}, Disponible: ${estado}`;
+      li.innerHTML = `<strong>${s.nombre}</strong>, ${estado}, ${s.tipo}, Reservas hoy: ${reservasHoy}`;
+
+      // Detalles ocultos
+      const detalles = document.createElement("div");
+      detalles.style.display = "none";
+      detalles.innerHTML = `
+        <div>Ubicación: ${s.ubicacion}</div>
+        <div>Precio: ${s.precio}</div>
+        <div>Cantidad: ${s.cantidad}</div>
+      `;
+      li.appendChild(detalles);
+
+      li.addEventListener("click", () => {
+        detalles.style.display = detalles.style.display === "none" ? "block" : "none";
+      });
+
       lista.appendChild(li);
     });
   }
 }
 
-function actualizarSurtidoresDisponibles(){
+export function actualizarSurtidoresDisponibles(){
   const listadisponibles = document.getElementById("lista-surtidores");
+
   if (listadisponibles) {
     listadisponibles.innerHTML = "";
     const surtidoresdisponibles = obtenerSurtidoresDisponibles();
+    const tickets = obtenerTickets();
+    const hoy = new Date().toISOString().split("T")[0];
+
     surtidoresdisponibles.forEach(s => {
+      // Contar tickets de hoy para este surtidor (por nombre)
+      const reservasHoy = tickets.filter(
+        t => t.gasolinera.trim().toLowerCase() === s.nombre.trim().toLowerCase() &&
+             new Date(t.id).toISOString().split("T")[0] === hoy
+      ).length;
+
       const li = document.createElement("li");
       const estado = s.disponible ? "Disponible" : "No Disponible";
-      li.textContent = `Surtidor: ${s.nombre}, Ubicación: ${s.ubicacion}, Tipo: ${s.tipo}, Precio: ${s.precio}, Cantidad: ${s.cantidad}, Disponible: ${estado}`;
+      li.innerHTML = `<strong>${s.nombre}</strong>, ${estado}, ${s.tipo}, Reservas hoy: ${reservasHoy}`;
+
+      // Detalles ocultos
+      const detalles = document.createElement("div");
+      detalles.style.display = "none";
+      detalles.innerHTML = `
+        <div>Ubicación: ${s.ubicacion}</div>
+        <div>Precio: ${s.precio}</div>
+        <div>Cantidad: ${s.cantidad}</div>
+      `;
+      li.appendChild(detalles);
+
+      li.addEventListener("click", () => {
+        detalles.style.display = detalles.style.display === "none" ? "block" : "none";
+      });
+
       listadisponibles.appendChild(li);
     });
+
     if (surtidoresdisponibles.length === 0) {
       const li = document.createElement("li");
       li.textContent = "No hay surtidores disponibles";
@@ -48,21 +97,23 @@ function actualizarSurtidoresDisponibles(){
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  actualizarSurtidores();
+export function iniciarVistaSurtidores() {
+  document.addEventListener("DOMContentLoaded", () => {
+    actualizarSurtidores();
 
-  const btnActualizar = document.getElementById("actualizar-surtidores");
-  if (btnActualizar) {
-    btnActualizar.addEventListener("click", () => {
-      actualizarSurtidores();
-    });
-  }
+    const btnActualizar = document.getElementById("actualizar-surtidores");
+    if (btnActualizar) {
+      btnActualizar.addEventListener("click", () => {
+        actualizarSurtidores();
+      });
+    }
 
-  const btnSurtidoresDisponibles = document.getElementById("obtener-surtidores-disponibles");
-  if (btnSurtidoresDisponibles){
-    btnSurtidoresDisponibles.addEventListener("click", () => {
-      actualizarSurtidoresDisponibles();
-    })
-  }
+    const btnSurtidoresDisponibles = document.getElementById("obtener-surtidores-disponibles");
+    if (btnSurtidoresDisponibles){
+      btnSurtidoresDisponibles.addEventListener("click", () => {
+        actualizarSurtidoresDisponibles();
+      })
+    }
 
-});
+  });
+}
