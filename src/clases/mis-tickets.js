@@ -1,19 +1,38 @@
-import { obtenerTickets } from '../clases/reservar-ticket.js';
+import { obtenerTickets, cancelarTicket } from './reservar-ticket.js';
 
-const lista = document.getElementById("listaTickets");
-const tickets = obtenerTickets();
+const contenedor = document.getElementById("listaTickets");
 
-if (tickets.length === 0) {
-  lista.innerHTML = "<li>No hay tickets reservados.</li>";
-} else {
+function renderizarTickets() {
+  contenedor.innerHTML = "";
+  const tickets = obtenerTickets();
+
+  if (tickets.length === 0) {
+    contenedor.innerHTML = "<p>No hay tickets reservados.</p>";
+    return;
+  }
+
   tickets.forEach(ticket => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <strong>Placa:</strong> ${ticket.placa} <br>
-      <strong>Gasolinera:</strong> ${ticket.gasolinera} <br>
-      <strong>Número de ticket:</strong> ${ticket.numero} <br>
-      <strong>Hora de aproximación:</strong> ${ticket.hora}
+    const div = document.createElement("div");
+    div.classList.add("ticket");
+
+    div.innerHTML = `
+      <p><strong>Placa:</strong> ${ticket.placa}</p>
+      <p><strong>Gasolinera:</strong> ${ticket.gasolinera}</p>
+      <p><strong>Ticket #:</strong> ${ticket.numero}</p>
+      <p><strong>Hora:</strong> ${ticket.hora}</p>
+      <button data-id="${ticket.id}">Cancelar</button>
     `;
-    lista.appendChild(li);
+
+    contenedor.appendChild(div);
+  });
+
+  document.querySelectorAll("button[data-id]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const id = parseInt(e.target.getAttribute("data-id"));
+      cancelarTicket(id);
+      renderizarTickets(); 
+    });
   });
 }
+
+renderizarTickets();
