@@ -55,3 +55,23 @@ describe('Reserva de tickets - Básico', () => {
   expect(ticket).toHaveProperty("hora", "09:00");
   });
 });
+
+//CANCELACION DE TICKETS
+
+
+describe('Cancelación de tickets - Básico', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  test('cancelarTicket elimina el ticket con el ID indicado', () => {
+    const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
+    const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+
+    cancelarTicket(t1.id);
+
+    const tickets = obtenerTickets();
+    expect(tickets.length).toBe(1);
+    expect(tickets[0].id).toBe(t2.id);
+  });
+});
