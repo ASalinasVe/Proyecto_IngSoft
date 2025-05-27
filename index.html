@@ -52,7 +52,11 @@
   <button id="actualizar-surtidores">Actualizar</button>  
   <button id="obtener-surtidores-disponibles">Surtidores Disponibles</button>
   <ul id="lista-surtidores"></ul>
-  <script type="module" src="./src/clases/ver-surtidores.dom.js"></script>
+
+  <script type="module">
+    import { iniciarVistaSurtidores } from './src/clases/ver-surtidores.dom.js';
+    iniciarVistaSurtidores();
+  </script>
 </div>
 
 </body>
