@@ -5,7 +5,8 @@ function procesarRegistro(entrada) {
       hora: entrada.hora,
       fecha: entrada.fecha,
       tipo: entrada.tipo,
-      estacion: entrada.estacion
+      estacion: entrada.estacion,
+      zona: entrada.zona
     };
   }
 //carajo
