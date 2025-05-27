@@ -80,4 +80,15 @@ describe('Cancelación de tickets - Básico', () => {
      }, 10);
    });
 
+  test('cancelarTicket no elimina ningún ticket si el ID no existe', () => {
+  const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
+  const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+
+  cancelarTicket(999999); 
+
+  const tickets = obtenerTickets();
+  expect(tickets.length).toBe(2);
+  expect(tickets[0].id).toBe(t1.id);
+  expect(tickets[1].id).toBe(t2.id);
+  });
 });
