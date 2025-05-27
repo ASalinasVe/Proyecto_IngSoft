@@ -38,4 +38,12 @@ function crearTicket(entrada) {
   return nuevoTicket;
 }
 
-export { crearTicket, obtenerTickets };
+//CANCELACION DE TICKETS
+
+function cancelarTicket(id) {
+  const tickets = obtenerTickets();
+  const nuevosTickets = tickets.filter(ticket => ticket.id !== id);
+  localStorage.setItem("tickets", JSON.stringify(nuevosTickets));
+}
+
+export { crearTicket, obtenerTickets, cancelarTicket };

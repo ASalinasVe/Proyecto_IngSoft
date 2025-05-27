@@ -1,4 +1,4 @@
-import { crearTicket, obtenerTickets } from '../clases/reservar-ticket.js';
+import { crearTicket, obtenerTickets, cancelarTicket } from '../clases/reservar-ticket.js';
 
 describe('Reserva de tickets - Básico', () => {
   beforeEach(() => {
@@ -53,5 +53,59 @@ describe('Reserva de tickets - Básico', () => {
   expect(ticket).toHaveProperty("gasolinera", "Estación Norte");
   expect(ticket).toHaveProperty("numero", 1);
   expect(ticket).toHaveProperty("hora", "09:00");
+  });
+});
+
+//CANCELACION DE TICKETS
+
+
+describe('Cancelación de tickets - Básico', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  test('cancelarTicket elimina el ticket con el ID indicado', (done) => {
+  const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
+
+    setTimeout(() => {
+     const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+
+     cancelarTicket(t1.id);
+
+     const tickets = obtenerTickets();
+     expect(tickets.length).toBe(1);
+     expect(tickets[0].id).toBe(t2.id);
+
+     done();
+     }, 10);
+   });
+
+  test('cancelarTicket no elimina ningún ticket si el ID no existe', () => {
+  const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
+  const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+
+  cancelarTicket(999999); 
+
+  const tickets = obtenerTickets();
+  expect(tickets.length).toBe(2);
+  expect(tickets[0].id).toBe(t1.id);
+  expect(tickets[1].id).toBe(t2.id);
+  });
+
+  test('cancelarTicket no afecta si se intenta cancelar dos veces el mismo ticket', (done) => {
+  const t1 = crearTicket({ placa: "AAA111", gasolinera: "Gasolinera Central" });
+
+  setTimeout(() => {
+    const t2 = crearTicket({ placa: "BBB222", gasolinera: "Estación Norte" });
+
+    cancelarTicket(t1.id);
+    cancelarTicket(t1.id); // segunda vez
+
+    const tickets = obtenerTickets();
+    expect(tickets.length).toBe(1);
+    expect(tickets[0].id).toBe(t2.id);
+
+    done();
+  }, 10);
   });
 });
