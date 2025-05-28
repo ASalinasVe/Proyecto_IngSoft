@@ -27,50 +27,45 @@ h1 {
 }
 
 form {
-  max-width: 600px;
-  margin: 2rem auto;
+  max-width: 400px;
+  margin: 3rem auto;
   padding: 2rem;
   background-color: #f6f0fa;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(128, 0, 128, 0.1);
 }
 
-form label {
+form div {
+  margin-bottom: 1.5rem;
+}
+
+label {
   display: block;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   color: #4a148c;
 }
 
-form input,
-form select {
+input[type="text"],
+input[type="password"] {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
+  padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
 }
 
-button {
-  margin-top: 1.5rem;
+input[type="submit"] {
   width: 100%;
+  padding: 0.75rem;
   background-color: #b39ddb;
   color: white;
   border: none;
-  padding: 0.75rem;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-button:hover {
+input[type="submit"]:hover {
   background-color: #9575cd;
-}
-
-#mensaje {
-  max-width: 600px;
-  margin: 1rem auto;
-  text-align: center;
-  color: #4a148c;
 }
