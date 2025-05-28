@@ -23,15 +23,37 @@ body {
   flex-wrap: wrap;
 }
 
-.logo span {
+/* LOGO: contenedor horizontal */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Imagen del logo */
+.logo-img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+/* Texto del logo */
+.logo-text {
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
+}
+
+/* Links de navegación */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 1.2rem;
   font-size: 1rem;
 }
 
