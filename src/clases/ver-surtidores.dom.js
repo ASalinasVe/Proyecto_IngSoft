@@ -2,13 +2,13 @@ import { obtenerSurtidores, obtenerSurtidoresDisponibles } from './surtidor.js';
 
 
 const surtidoresIniciales = [
-  { id: 1, nombre: "Surtidor A", ubicacion: "Zona 1", tipo: "gasolina", disponible: true, precio: 5, cantidad: 100 },
-  { id: 2, nombre: "Surtidor B", ubicacion: "Zona 2", tipo: "diesel", disponible: true, precio: 6, cantidad: 80 },
-  { id: 3, nombre: "Surtidor C", ubicacion: "Zona 3", tipo: "gasolina", disponible: false, precio: 5, cantidad: 0 },
-  { id: 4, nombre: "Surtidor D", ubicacion: "Zona 4", tipo: "diesel", disponible: false, precio: 6, cantidad: 0 } 
+  { id: 1, nombre: "Estacion de Servicio Los Alpes", ubicacion: "Cochabamba, Avenida Eliodoro Villazón, Los Alpes", tipo: "gasolina", disponible: true, precio: 5, cantidad: 100 },
+  { id: 2, nombre: "Estacion de Servicio Anita", ubicacion: "Sacaba, Avenida Eliodoro Villazón, Anita", tipo: "diesel", disponible: true, precio: 6, cantidad: 80 },
+  { id: 3, nombre: "Estacion de Servicio Cochabamba", ubicacion: "Calle Cañada de Cochabamba, Chimba Grande, Estación de Servicio Cochabamba", tipo: "gasolina", disponible: false, precio: 5, cantidad: 0 },
+  { id: 4, nombre: "Estacion de Servicio Urkupiña", ubicacion: "Cochabamba, Avenida Circunvalación Beijing, Urkupiña", tipo: "diesel", disponible: false, precio: 6, cantidad: 0 } 
 ];
 
-//localStorage.removeItem("surtidores"); // Esto borra la lista vieja cada vez que recargas
+localStorage.removeItem("surtidores"); // Esto borra la lista vieja cada vez que recargas
 
 if (!localStorage.getItem("surtidores")) {
   localStorage.setItem("surtidores", JSON.stringify(surtidoresIniciales));
